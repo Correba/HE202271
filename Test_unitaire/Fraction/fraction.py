@@ -92,7 +92,7 @@ class Fraction:
 
     # ------------------ Operators overloading ------------------
 
-    def __add__(self, other: int):
+    def __add__(self, other):
         """Overloading of the + operator for fractions
 
          :pre: a numerical value
@@ -104,7 +104,7 @@ class Fraction:
         add_den = self.denominator * other.denominator
         return Fraction(add_num, add_den)
 
-    def __sub__(self, other: int):
+    def __sub__(self, other):
         """Overloading of the - operator for fractions
 
         :pre: a numerical value
@@ -116,7 +116,7 @@ class Fraction:
         sub_den = self.denominator * other.denominator
         return Fraction(sub_num, sub_den)
 
-    def __mul__(self, other: int):
+    def __mul__(self, other):
         """Overloading of the * operator for fractions
 
         :pre: a numerical value
@@ -128,7 +128,7 @@ class Fraction:
         mul_den = self.denominator * other.denominator
         return Fraction(mul_num, mul_den)
 
-    def __truediv__(self, other: int):
+    def __truediv__(self, other):
         """Overloading of the / operator for fractions
 
         :pre: a numerical value
@@ -140,7 +140,7 @@ class Fraction:
         div_den = self.denominator * other.numerator
         return Fraction(div_num, div_den)
 
-    def __pow__(self, other: int):
+    def __pow__(self, other):
         """Overloading of the ** operator for fractions
 
         :pre: an integer
@@ -154,7 +154,7 @@ class Fraction:
         pow_den = self.denominator ** other
         return Fraction(pow_num, pow_den)
 
-    def __eq__(self, other: int) -> bool:
+    def __eq__(self, other) -> bool:
         """Overloading of the == operator for fractions
 
         :pre: an int
@@ -179,7 +179,7 @@ class Fraction:
         """
         return Fraction(abs(self.numerator), self.denominator)
 
-    def __gt__(self, other: int) -> bool:
+    def __gt__(self, other) -> bool:
         """Overloading of the > operator for fractions
 
         :pre: an integer or a Fraction
@@ -187,7 +187,7 @@ class Fraction:
         """
         return float(self) > float(other)
 
-    def __ge__(self, other: int) -> bool:
+    def __ge__(self, other) -> bool:
         """Overloading of the >= operator for fractions
 
         :pre: an integer or a Fraction
@@ -195,7 +195,7 @@ class Fraction:
         """
         return float(self) >= float(other)
 
-    def __lt__(self, other: int) -> bool:
+    def __lt__(self, other) -> bool:
         """Overloading of the < operator for fractions
 
         :pre: an integer or a Fraction
@@ -203,7 +203,7 @@ class Fraction:
         """
         return float(self) < float(other)
 
-    def __le__(self, other: int) -> bool:
+    def __le__(self, other) -> bool:
         """Overloading of the <= operator for fractions
 
         :pre: an integer or a Fraction

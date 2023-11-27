@@ -28,6 +28,9 @@ class FactTestCase(unittest.TestCase):
         with self.assertRaises(TypeError) as type_error3:
             print(Fraction(8, 4) ** [1])
         self.assertEqual(type_error3.exception.args[0], 'Must be type int')
+        with self.assertRaises(TypeError) as type_error3:
+            print(Fraction(8, 4).is_fraction('smth'))
+        self.assertEqual(type_error3.exception.args[0],'Must be an int or a Fraction')
 
 
 if __name__ == '__main__':

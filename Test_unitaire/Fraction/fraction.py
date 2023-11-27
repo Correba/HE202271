@@ -49,7 +49,7 @@ class Fraction:
         return self.__denominator
 
     @staticmethod
-    def is_fraction(num: int):
+    def is_fraction(num):
         """A function to set a value to Fraction
 
         :pre: a numerical value
@@ -60,7 +60,7 @@ class Fraction:
         if isinstance(num, int):
             num = Fraction(num)
         if not isinstance(num, Fraction):
-            raise ValueError('Must be an int or a fraction')
+            raise TypeError('Must be an int or a Fraction')
         return num
 
     # ------------------ Textual representations ------------------

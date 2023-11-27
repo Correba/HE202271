@@ -250,25 +250,3 @@ class Fraction:
         :post: returns True if two Fraction are adjacent else returns False
         """
         return abs(self - other).is_unit()
-
-
-def test_type(fraction, adjacent):
-    """Test function for the types methods"""
-    print(f'{fraction} :')
-    print(f'---> Mixed number : {fraction.as_mixed_number()}')
-    print(f'---> Is zero : {fraction.is_zero()}')
-    print(f'---> Is int : {fraction.is_integer()}')
-    print(f'---> Is proper : {fraction.is_proper()}')
-    print(f'---> Is unit : {fraction.is_unit()}')
-    print(f'---> Is adjacent : {fraction.is_adjacent_to(adjacent)}\n')
-
-
-if __name__ == '__main__':
-    try:
-        fraction1 = Fraction(3, 0)
-        print(fraction1)
-    except ZeroDivisionError as error:
-        print(f'Error : \n---> {error}\n')
-
-    test_type(Fraction(10, 5), Fraction(9, 5))
-    test_type(Fraction(1, 4), Fraction(3, 4))

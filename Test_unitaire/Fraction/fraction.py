@@ -72,13 +72,6 @@ class Fraction:
         """
         return f'{self.__numerator}/{self.__denominator}'
 
-    def __repr__(self) -> str:
-        """Return the textual representation of the reduced form of the fraction
-
-        post: the numerator and the denominator separated by a backslash
-        """
-        return str(self)
-
     def as_mixed_number(self):
         """Return a textual representation of the reduced form of the fraction as a mixed number
 
@@ -169,7 +162,7 @@ class Fraction:
         """
         return self.numerator / self.denominator
 
-    # TODO : [BONUS] You can overload other operators if you wish (ex : <, >, ...)
+    # [BONUS] You can overload other operators if you wish (ex : <, >, ...)
 
     def __abs__(self):
         """Returns the absolute value of the fraction
@@ -249,7 +242,3 @@ class Fraction:
         post: returns True if two Fraction are adjacent else returns False
         """
         return abs(self - other).is_unit()
-
-
-if __name__ == '__main__':
-    print(Fraction(1, 2) < 5.1)

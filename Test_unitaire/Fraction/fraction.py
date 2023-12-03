@@ -52,7 +52,7 @@ class Fraction:
     def is_fraction(num):
         """A function to set a value to Fraction
 
-        pre: a numerical value
+        pre: - other: a Fraction or an int
         post: returns a fraction of the value
         raises: ValueError if num is not an int or a Fraction
         """
@@ -94,11 +94,10 @@ class Fraction:
 
     def __add__(self, other):
         """Overloading of the + operator for fractions
-
-         pre: a numerical value
-         post: returns the result of the addition of two elements
-         raises: ValueError if other not int
-         """
+        pre: - other: a Fraction or an int
+        post: returns the result of the addition of two elements
+        raises: ValueError if other not int
+        """
         other = self.is_fraction(other)
         add_num = self.numerator * other.denominator + self.denominator * other.numerator
         add_den = self.denominator * other.denominator
@@ -107,7 +106,7 @@ class Fraction:
     def __sub__(self, other):
         """Overloading of the - operator for fractions
 
-        pre: a numerical value
+        pre: - other: a Fraction or an int
         post: returns the result of the subtraction of two elements
         raises: ValueError if other not int
         """
@@ -119,7 +118,7 @@ class Fraction:
     def __mul__(self, other):
         """Overloading of the * operator for fractions
 
-        pre: a numerical value
+        pre: - other: a Fraction or an int
         post: returns the result of the multiplication of two elements
         raises: ValueError if other not int
         """
@@ -131,7 +130,7 @@ class Fraction:
     def __truediv__(self, other):
         """Overloading of the / operator for fractions
 
-        pre: a numerical value
+        pre: - other: a Fraction or an int
         post: returns the result of the division of two elements
         raises: ValueError if other not int
         """
@@ -143,7 +142,7 @@ class Fraction:
     def __pow__(self, other):
         """Overloading of the ** operator for fractions
 
-        pre: an integer
+        pre: - other: an integer
         post: the value of the fraction to the power of an int
         raises: if other is not an int raises a TypeError
         """
@@ -157,7 +156,7 @@ class Fraction:
     def __eq__(self, other) -> bool:
         """Overloading of the == operator for fractions
 
-        pre: an int
+        pre: -other: a numerical value or a Fraction
         post: returns the equality between two Fraction
         """
         other = self.is_fraction(other)
@@ -182,7 +181,7 @@ class Fraction:
     def __gt__(self, other) -> bool:
         """Overloading of the > operator for fractions
 
-        pre: an integer or a Fraction
+        pre: - other: a numerical value or a Fraction
         post: the current fraction is greater than the other fraction
         """
         return float(self) > float(other)
@@ -190,7 +189,7 @@ class Fraction:
     def __ge__(self, other) -> bool:
         """Overloading of the >= operator for fractions
 
-        pre: an integer or a Fraction
+        pre: - other: a numerical value or a Fraction
         post: the current fraction equals or is greater than the other fraction
         """
         return float(self) >= float(other)
@@ -198,7 +197,7 @@ class Fraction:
     def __lt__(self, other) -> bool:
         """Overloading of the < operator for fractions
 
-        pre: an integer or a Fraction
+        pre: - other: a numerical value or a Fraction
         post: the current fraction is lower than the other fraction
         """
         return float(self) < float(other)
@@ -206,7 +205,7 @@ class Fraction:
     def __le__(self, other) -> bool:
         """Overloading of the <= operator for fractions
 
-        pre: an integer or a Fraction
+        pre: - other: a numerical value or a Fraction
         post: the current fraction equals or is lower than the other fraction
         """
         return float(self) <= float(other)
@@ -246,7 +245,11 @@ class Fraction:
 
         Two fractions are adjacent if the absolute value of the difference them is a unit fraction
 
-        pre: a Fraction
+        pre: - other: a Fraction
         post: returns True if two Fraction are adjacent else returns False
         """
         return abs(self - other).is_unit()
+
+
+if __name__ == '__main__':
+    print(Fraction(1, 2) < 5.1)

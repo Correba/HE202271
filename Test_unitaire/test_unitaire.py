@@ -93,7 +93,7 @@ class FactTestCase(unittest.TestCase):
 
     def test_div(self):
         """Test div operation on Fraction"""
-        self.assertEqual(str(Fraction(1, 2) / Fraction(3, 4)), "2/3")
+        self.assertEqual(Fraction(1, 2) / Fraction(3, 4), Fraction(2, 3))
         self.assertEqual(str(Fraction(8, 4) / Fraction(2, 2)), "2/1")
         self.assertEqual(str(Fraction(3, 4) / Fraction(13, 4)), "3/13")
         self.assertEqual(str(Fraction(1, 2) / 2), "1/4")

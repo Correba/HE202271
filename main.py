@@ -1,4 +1,5 @@
 def main():
+    'Some useless comment'
     print("Hello world")
 
 
